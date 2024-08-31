@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<!-- Task 4: Restaurant Menu
+Scenario: You are developing a restaurant menu system that provides the price of a dish based on the dish name.
+
+Task:
+Assume a variable dish holds the name of the dish as a string (e.g.,  "Biriyani", "shawarma", "Fried rice", "veg pula").
+Print the price. -->
+
+
+
+<script>
+    
+var dish = prompt("enter a dish"); 
+
+var price;
+
+switch(dish) {
+
+    case "biryani":
+        alert(`The price of ${dish} is: 250`);
+        break;
+
+    case "shawarma":
+       alert(`The price of ${dish} is: 150`);
+       break;
+
+    case "friedrice":
+       alert(`The price of ${dish} is: 200`);
+        break;
+
+    case "vegpulao":
+        alert(`The price of ${dish} is: 260`);
+        break;
+
+        case "chickenpulao":
+        alert(`The price of ${dish} is: 260`);
+        break;
+
+    default:
+        alert("Dish not available");
+        break;
+}
+
+
+   
+</script>
+</body>
+
+</html>

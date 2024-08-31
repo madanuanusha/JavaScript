@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--      
+Task 3: Discount Calculator
+Scenario: Calculate the discount based on the total purchase amount.
+
+“No discount” if the amount is less than $50.
+“5% discount” if the amount is between $50 and $100.
+“10% discount” if the amount is between $101 and $200.
+“15% discount” if the amount is above $200.
+Task: -->
+<script>
+    var amount= prompt("enter the amount");
+    
+    if(amount<50){
+        alert('No discount');
+    }
+    else if(amount>=50 && amount<=100){
+        alert('5% discount');
+    }
+    else if(amount>=101 && amount<=200){
+        alert('10% discount');
+    }
+    else{
+        alert('15% discount');
+    }
+</script>
+
+</body>
+</html>
