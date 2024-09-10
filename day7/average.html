@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Define a function average that takes one parameter arr.
+The function should return the average of the numbers in arr.
+Call the function with different arrays and print the results. -->
+
+<!-- function average(arr) {
+    const sum = arr.reduce((acc, num) => acc + num, 0);
+    return sum / arr.length;
+}
+
+console.log(average([2, 5, 2]));  -->
+    <script>
+        	function average(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum = sum+ arr[i];
+    }
+    return sum / arr.length;
+}
+
+    console.log(average([9, 5, 9]));        
+
+           
+    </script>
+</body>
+</html>
