@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        body{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        .calculate{
+            margin-top: 10px;
+            width: 100px;
+            padding: 6px;
+            background-color: gainsboro;1
+        }
+        div{
+            transform: translate(500px,150px);
+        }
+    </style>
+  </head>
+  <body>
+    <div class="calculator-container">
+      <h1>BMI CALCULATOR</h1>
+      <p>Height in meters:</p>
+      <input class="height-input-field" type="text" />
+      <p>Weight in kilograms:</p>
+      <input class="weight-input-field" type="text" /><br />
+      <button class="calculate" onclick="calculateBMI()">Calculate</button>
+
+      <h3 class="result"></h3>
+      <p class="result-statement"></p>
+    </div>
+
+    <script>
+     var container = document.querySelector("div");
+     container.style.backgroundColor="plum";
+     container.style.width="400px"
+      container.style.height="300px"
+      container.style.textAlign="center";
+     
+      var heightInput = document.querySelector(".height-input-field");
+      heightInput.style.color="purple";
+      heightInput.style.padding="8px";
+      var weightInput = document.querySelector(".weight-input-field");
+      weightInput.style.color="purple";
+      weightInput.style.padding="8px";
+      var calculateButton = document.querySelector(".calculate");
+      
+      var result = document.querySelector(".result");
+      var statement = document.querySelector(".result-statement");
+      var BMI, height, weight;
+
+      function showAlert() {
+        alert("Enter your height in meters and your weight in kilograms!");
+      }
+
+      function calculateBMI() {
+        height = heightInput.value;
+        weight = weightInput.value;
+        BMI = weight / height ** 2;
+        result.innerText = BMI;
+
+        if (BMI < 18.5) {
+          statement.innerText = "Your BMI falls within the underweight range";
+          statement.style.color="red";
+        } else if (BMI > 18.5 && BMI < 24.9) {
+          statement.innerText ="Your BMI falls within the normal or healthy weight range";
+            statement.style.color="green";
+        } else if (BMI > 25 && BMI < 29.9) {
+          statement.innerText = "Your BMI falls within the overweight range";
+          statement.style.groundColor="yellow";
+        }
+     else{
+          statement.innerText = "Your BMI falls within obese category";
+          statement.style.color="red";
+      }
+    
+      }
+      
+    </script>
+  </body>
+</html>

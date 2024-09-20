@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center><h1 style="color:rgb(208, 75, 228)">USERNAME</h1></center>
+    <form id="su">
+        <center><input type="text" placeholder="Enter valid username" id="u1"><br></center>
+        <br>
+       <center><span></span></center>
+        <center><input type="submit" value="submit"></center>
+        <script>
+        var form = document.getElementById('su');
+        var u1 = document.getElementsByTagName('input')[0];
+        var span = document.getElementsByTagName('span')[0];
+        form.addEventListener("submit",function(event)
+        {
+            event.preventDefault();
+            var u=u1.value;
+        var length=false;
+        for(i=0;i<u.length;i++)
+    {
+        
+        if(u.length>=5 &&u.length<=15)
+    {
+        length=true;
+    }
+}
+if(length)
+    {
+       span.textContent=" valid length";
+       span.style.color = "green";
+    }
+    else{
+        span.textContent="Please enter valid length";
+        span.style.color = "red";  
+    }
+
+        })
+        </script>
+
+</body>
+</html>
