@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+//        //Task 1: Username Validation
+//        let username = prompt("Enter a username (5 to 15 characters):");
+
+// if (username.length >= 5 && username.length <= 15) {
+//     console.log("Valid username.");
+// } else {
+//     console.log("Invalid username. It must be between 5 and 15 characters.");
+// }
+
+    //Task 2: Email Formatter
+//     let firstName = prompt("Enter your first name:");
+// let lastName = prompt("Enter your last name:");
+// let email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@gmail.com";
+// console.log("Formatted Email:", email);
+
+    //Task 3: Word Counter
+//     let sentence = prompt("Enter a sentence:");
+// let words = sentence.trim().split(/\s+/);  // Split by spaces and trim leading/trailing spaces
+// console.log("Word Count:", words.length);
+
+    //Task 4: Palindrome Checker
+    let input = prompt("Enter a string to check if it's a palindrome:");
+let reversedString = input.split('').reverse().join('');
+
+if (input === reversedString) {
+    console.log(`${input} is a palindrome.`);
+} else {
+    console.log(`${input} is not a palindrome.`);
+}
+
+    </script>
+</body>
+</html>

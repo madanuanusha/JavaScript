@@ -8,15 +8,14 @@
 <body>
     <script>
        
-        var a=[6,789,94,22,12,35,0,9,12];
-    
-        a.sort(function(i,j)
-    {
-       return i-j;
-    
-    })
-    console.log(a);
-   
+let number = parseInt(prompt("Enter a number to calculate its factorial:"));
+let factorial = 1;
+
+for (let i = 1; i <= number; i++) {
+    factorial *= i;  
+}
+
+console.log(`Factorial of ${number} is: ${factorial}`);
 
     </script>
 </body>

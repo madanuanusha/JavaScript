@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <script>
+        window.onload = function() {
+            document.body.style.backgroundColor="plum";
+            var name = document.createElement("h1");
+            name.style.fontSize = "2em"; 
+            name.innerText = "Madanu Anusha";
+            name.style.textAlign = "center";
+            name.style.color="green";
+           
+
+            var obj = document.createElement("h2");
+            obj.innerText="Career Objective";
+            obj.style.color="blue";
+
+            var text=document.createElement("p");
+            text.innerText = "Highly motivated and enthusiastic front-end developer with a strong foundation in HTML, CSS, JavaScript, and responsive design principles. Passionate about crafting seamless and engaging user experiences while implementing modern web technologies. Seeking to leverage my skills and creativity in a dynamic development team to build intuitive, user-centric web applications and contribute to cutting-edge projects.";
+            text.style.textAlign = "justify";
+            text.style.color="red";
+
+
+            var skills=document.createElement("h2");
+            skills.innerText="Technical Skills";
+            skills.style.color="magenta";
+
+            var techs=document.createElement("p");
+            techs.innerText = " HTML\nCSS\nJS";
+            techs.style.color="brown";
+
+            var strength=document.createElement("h2");
+            strength.innerText="Strengths";
+            strength.style.color="chocolate";
+
+            var stre=document.createElement("p");
+            stre.innerText="Adaptability\nCommunication\nLeadership";
+            stre.style.color="darkviolet";
+
+            var dec=document.createElement("h2");
+            dec.innerText="Declaration";
+            dec.style.color="maroon";
+
+            var decl=document.createElement("p");
+            decl.innerText="I here by declare that all the above mentioned information is true regarding the best of my knowledge.";
+            decl.style.color="navy";
+
+            var sign=document.createElement("h3");
+            sign.innerText="Signature";
+            sign.style.color="rebeccapurple";
+
+            var sig=document.createElement("p");
+            sig.innerText="Anushai";
+            sig.style.color="peru";
+
+            document.body.appendChild(name);
+            document.body.appendChild(obj);
+            document.body.appendChild(text);
+            document.body.appendChild(skills);
+            document.body.appendChild(techs);
+            document.body.appendChild(strength);
+            document.body.appendChild(stre);
+            document.body.appendChild(dec);
+            document.body.appendChild(decl);
+            document.body.appendChild(sign);
+            document.body.appendChild(sig);
+
+
+            var button = document.createElement("button");
+            button.innerText = "Change Background Color";
+            var colors=["cyan", "lightgreen", "lightblue", "lavender", "lightcoral", "lightyellow","red","blue","green","brown","slateblue"];
+            var i=0;
+            button.onclick = function() {
+                document.body.style.backgroundColor=colors[i];
+                i=(i+1)%colors.length;
+
+            };
+
+            document.body.appendChild(button);
+        };
+    </script>
+</body>
+</html>

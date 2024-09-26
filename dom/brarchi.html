@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="myButton">Name</button> 
+    <button id="myButton">E-mail</button> 
+    <button id="myButton">Subject</button> 
+    <button id="myButton">Comment</button> 
+
+    <script>
+        document.body.style.overflowX = "hidden";
+
+        var header=document.createElement("div");
+        header.innerHTML="BR Architects";
+        // styling header (BR Architects)
+        header.style.display="flex";
+        header.style.justifyContent="space-between";
+        header.style.width="100%";
+        header.style.padding="1em";
+        header.style.top="0";
+        header.style.backgroundColor="white";
+        header.style.position="fixed";
+        header.style.fontSize="1.1em";
+        header.style.fontWeight="300";
+        header.style.fontFamily="Verdana, sans-serif";
+        header.style.letterSpacing ="1px";
+
+        var navbar=document.createElement("div");
+        // styling nav bar
+        navbar.style.display="flex";
+        navbar.style.gap="2.5em";
+        navbar.style.width="25%";
+    
+        var nav1=document.createElement("div");
+        nav1.innerHTML="Projects";
+      
+        var nav2=document.createElement("div");
+        nav2.innerHTML="About";
+        
+        var nav3=document.createElement("div");
+        nav3.innerText="Contact";
+
+        header.appendChild(navbar);
+        navbar.appendChild(nav1);
+        navbar.appendChild(nav2);
+        navbar.appendChild(nav3);
+
+        console.log(header);
+        document.body.append(header);
+        // br architecture div for image
+        var a=document.createElement("div");
+        // text on br architecture div 
+        var b=document.createElement("div");
+        // br architecture image styling
+        a.style.backgroundImage='url("https://www.w3schools.com/w3images/architect.jpg")';
+        a.style.height="110vh";
+        a.style.width="100%";
+        a.style.backgroundSize="cover";
+        a.style.backgroundPosition="center";
+        a.style.backgroundRepeat="no-repeat";
+        a.style.marginBottom="2em";
+
+        // text on br architecture image
+        b.innerText="BR Architects";
+        b.style.fontFamily="Segoe UI, Arial, sans-serif";
+        b.style.textAlign="center";
+        b.style.paddingTop="5em";
+        b.style.fontWeight="600";
+        b.style.fontSize="3em";
+        b.style.lineSpacing="4px";
+
+        a.appendChild(b);
+        console.log(a);
+        document.body.appendChild(a);
+       
+        // project  
+        let projecttext=document.createElement("div");
+       
+        projecttext.innerText="Projects"
+       
+        projecttext.style.fontSize="1.5em";
+        projecttext.style.fontWeight="300";
+        projecttext.style.paddingBottom="1em";
+        projecttext.style.paddingLeft="1em";
+        console.log(projecttext);
+        document.body.append(projecttext);
+       
+        //  house names
+        let names=["Summer House", "Brick House", "Renovated", "Barn House", "Summer House", "Brick House", "Renovated", "Barn House"];
+        // house images
+        let images=["https://www.w3schools.com/w3images/house5.jpg", "https://www.w3schools.com/w3images/house2.jpg", "https://www.w3schools.com/w3images/house3.jpg", "https://www.w3schools.com/w3images/house4.jpg", "https://www.w3schools.com/w3images/house2.jpg", "https://www.w3schools.com/w3images/house5.jpg", "https://www.w3schools.com/w3images/house4.jpg", "https://www.w3schools.com/w3images/house3.jpg"];
+
+        
+        // houses container
+        var mn=document.createElement("div");
+        // styling the container
+        mn.style.display="grid";
+        mn.style.gridTemplateColumns="auto auto auto auto";
+        mn.style.gap="20px";
+        mn.style.width="95%";
+        mn.style.marginBottom="2em";
+        mn.style.padding="1.3em";
+        // loop for the houses in the container to decrease the length of code
+        for (i=0; i<8; i++) {
+            // creating a div for houses images
+            var el1=document.createElement("div");
+            // creating a div for the text on the house images
+            var el1a=document.createElement("div");
+            // styling the houses images
+            el1.style.background=url(${images[i]});
+            el1.style.height="15em";
+            el1.style.width="100%";
+            el1.style.backgroundRepeat="no-repeat";
+            el1.style.backgroundSize="cover";
+            // styling the text on the houses images
+            el1a.innerText=names[i];
+            el1a.style.background="black";
+            el1a.style.color="white";
+            el1a.style.padding="10px";
+            el1a.style.fontSize="15px";
+            el1a.style.width="7em";
+            // appending "el1" child to "mn" parent
+            mn.appendChild(el1);
+            // appending "el1a" child to "el1" parent
+            el1.appendChild(el1a);
+            
+            console.log(mn);
+            document.body.appendChild(mn);
+        }
+       
+            // about heading 
+            let abouttext=document.createElement("div");
+          
+            abouttext.innerText="About"
+            abouttext.style.paddingLeft="0.5em";
+            abouttext.style.fontSize="1.5em";
+            abouttext.style.fontWeight="300";
+            abouttext.style.paddingBottom="1em";
+            abouttext.style.fontFamily="Verdana, sans-serif";
+            console.log(abouttext);
+            document.body.append(abouttext);
+
+            let aboutpara=document.createElement("div");
+       
+            aboutpara.innerText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
+            aboutpara.style.paddingLeft="1.1em";
+            aboutpara.style.paddingBottom="2em";
+            aboutpara.style.paddingRight="1.5em";
+            aboutpara.style.fontFamily="Verdana, sans-serif";
+            aboutpara.style.lineSpacing="5px";
+            aboutpara.style.lineHeight="20px";
+            console.log(aboutpara);
+            document.body.append(aboutpara);
+
+            // about us
+            var main=document.createElement("div");
+       
+            main.style.display="flex";
+            main.style.gap="1em";
+            main.style.width="95%";
+            main.style.paddingLeft="1.3em";
+            main.style.paddingRightt="1em";
+            main.style.marginBottom="2em";
+
+            //  pics in about
+            let pics=["https://www.w3schools.com/w3images/team2.jpg", "https://www.w3schools.com/w3images/team1.jpg", "https://www.w3schools.com/w3images/team3.jpg", "https://www.w3schools.com/w3images/team4.jpg"];
+            //  name in about
+            let name=["John Doe", "Jane Doe", "Mike Ross", "Dan Star"];
+            //  roles in about
+            let roles=["CEO & Founder", "Architect", "Architect", "Architect"];
+           
+            for (j=0; j<4; j++) {
+                var main1=document.createElement("div");
+           
+            var m1i=document.createElement("div");
+            m1i.style.background=url(${pics[j]});
+            m1i.style.height="15em";
+            m1i.style.width="95%";
+            m1i.style.backgroundRepeat="no-repeat";
+            m1i.style.backgroundSize="cover";
+            m1i.style.marginBottom="2em";
+                
+            var m1n=document.createElement("div");
+            m1n.innerText=name[j];
+            m1n.style.fontSize="1.5em";
+            m1n.style.marginBottom=".5em";
+       
+            var m1r=document.createElement("div");
+            m1r.innerText=roles[j];
+            m1r.style.marginBottom="1em";
+            m1r.style.color="gray";
+        
+            var m1t=document.createElement("div");
+            m1t.innerText="Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.";
+            m1t.style.marginBottom="1.5em";
+            m1t.style.fontFamily="Verdana, sans-serif";
+            m1t.style.fontSize="14px";
+            m1t.style.lineHeight="20px";
+            var m1b = document.createElement("div");
+            m1b.innerText = "Contact";
+            m1b.style.textAlign="center";
+             m1b.style.padding = ".5em 5.5em";
+           m1b.style.backgroundColor="lightgrey";
+            
+            main.appendChild(main1);
+            main1.appendChild(m1i);
+            main1.appendChild(m1n);
+            main1.appendChild(m1r);
+            main1.appendChild(m1t);
+            main1.appendChild(m1b);
+            console.log(main);
+            document.body.appendChild(main);
+            }
+
+            var con=document.createElement("div");
+            con.innerText="Contact";
+            con.style.fontFamily="Verdana, sans-serif";
+            con.style.paddingLeft="0.5em";
+            con.style.fontSize="1.5em";
+            con.style.fontWeight="300";
+            con.style.paddingBottom="0.5em";
+            console.log(con);
+            document.body.append(con);
+
+            var context=document.createElement("p");
+            context.innerText="Lets get in touch and talk about your next project.";
+            context.style.fontFamily="Verdana, sans-serif";
+            context.style.paddingLeft="0.5em";
+            context.style.fontSize="1em";
+            context.style.paddingBottom="0.4em";
+            console.log(context);
+            document.body.append(context);
+            
+            var bu1=document.createElement("button");
+            bu1.innerText="Name";
+            bu1.style.textAlign="justify";
+            bu1.style.width="95%";
+            bu1.style.padding="10px";
+            bu1.style.marginBottom="1em";
+            console.log(bu1);
+            document.body.append(bu1);
+
+            var bu1=document.createElement("button");
+            bu1.innerText="E-mail";
+            bu1.style.textAlign="justify";
+            bu1.style.width="95%";
+            bu1.style.padding="10px";
+            bu1.style.marginBottom="1em";
+            console.log(bu1);
+            document.body.append(bu1);
+
+            var bu1=document.createElement("button");
+            bu1.innerText="Subject";
+            bu1.style.textAlign="justify";
+            bu1.style.width="95%";
+            bu1.style.padding="10px";
+            bu1.style.marginBottom="1em";
+            console.log(bu1);
+            document.body.append(bu1);
+
+            var bu1=document.createElement("button");
+            bu1.innerText="Comment";
+            bu1.style.textAlign="justify";
+            bu1.style.width="95%";
+            bu1.style.padding="10px";
+            bu1.style.marginBottom="1em";
+            console.log(bu1);
+            document.body.append(bu1);
+
+            var bu1=document.createElement("button");
+            bu1.innerText="Send Message";
+            bu1.style.textAlign="justify";
+            bu1.style.width="10%";
+            bu1.style.padding="10px";
+            bu1.style.marginBottom="2em";
+            bu1.style.backgroundColor="black";
+            bu1.style.color="white";
+            console.log(bu1);
+            document.body.append(bu1);
+
+            var map=document.createElement("div");
+            map.style.background='url("https://www.w3schools.com/w3images/map.jpg")';
+            map.style.backgroundRepeat="no-repeat";
+             map.style.backgroundSize="cover";
+            map.style.height="100vh";
+            map.style.width="100%";
+            map.style.marginBottom="1em";
+         
+            console.log(map);
+            document.body.append(map);
+    </script>
+
+    <div style="background-color: black; color: white; height: 3.7em; text-align: center; padding: 0.5em; height: 4em; width: 100%; font-size: larger;">
+        <p>Powered by <u>w3.css</u></p>
+    </div> 
+
+</body>
+</html>

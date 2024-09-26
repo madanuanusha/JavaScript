@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance Manager</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #description,#amount,#type,#addTransaction{
+            padding: 10px;
+        }
+        
+        ::placeholder{
+            color: black;
+            
+        }
+
+        #description:focus,#amount:focus,#type:focus{
+            border-color: black;
+        }
+        #addTransaction{
+            background-color: rgb(31, 221, 31);
+        }
+        #transactionTable{
+           
+        }
+        #row{
+         border: none;
+          padding: 10px;
+          background-color: rgb(215, 215, 243);
+
+          width: 100px;
+          border-collapse: 0px;
+        }
+      
+    </style>
+</head>
+<body>
+
+    <h2>Personal Finance Manager</h2>
+
+    <div id="balance"> Balance: <span id="balance">0</span></div> <br>
+    <div>
+       
+        <input type="text" id="description" placeholder="description">
+       <input type="number" id="amount" placeholder="amount">
+        <select id="type">
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+        </select>
+        <button id="addTransaction">Add Transaction</button>
+    </div>
+
+    <h2>Transactions</h2>
+    <table id="transactionTable">
+        <thead>
+            <tr >
+                <th id="row">Description</th>
+                <th id="row">Amount</th>
+                <th id="row">Type</th>
+                <th id="row">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+        </tbody>
+    </table>
+
+<script>
+    let balance = 0; 
+    document.getElementById('addTransaction').addEventListener('click', function() {
+        const description = document.getElementById('description').value;
+        const amount = parseFloat(document.getElementById('amount').value); 
+        const type = document.getElementById('type').value;
+
+        if (description === "" || isNaN(amount)) {
+            alert("Please fill in all fields.");
+            return;
+        }
+
+       
+        if (type === 'income') {
+            balance += amount;
+        } else if (type === 'expense') {
+            balance -= amount;
+        }
+
+       
+        document.getElementById('balance').textContent = balance.toFixed(2);
+
+       
+        const table = document.getElementById('transactionTable').getElementsByTagName('tbody')[0];
+        const newRow = table.insertRow();
+
+        const descCell = newRow.insertCell(0);
+        const amountCell = newRow.insertCell(1);
+        const typeCell = newRow.insertCell(2);
+        const actionCell = newRow.insertCell(3);
+
+        descCell.innerHTML = description;
+        amountCell.innerHTML = amount.toFixed(2); 
+        typeCell.innerHTML = type;
+
+       
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.onclick = function() {
+           
+            if (type === 'income') {
+                balance -= amount;
+            } else if (type === 'expense') {
+                balance += amount;
+            }
+            document.getElementById('balance').textContent = balance.toFixed(2);
+
+           
+            table.deleteRow(newRow.rowIndex - 1);
+        };
+        actionCell.appendChild(deleteButton);
+
+       
+        document.getElementById('description').value = '';
+        document.getElementById('amount').value = '';
+        document.getElementById('type').value = 'income';
+    });
+</script>
+
+</body>
+</html>

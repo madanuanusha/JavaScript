@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Number Generator</title>
+</head>
+
+<style>
+  #btn1,#btn2,#btn3{
+    width: 150px;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(240, 181, 159);
+    border: none;
+  }
+
+  #btn1:hover, #btn2:hover,  #btn3:hover{
+    border: 1px solid black;
+  }
+</style>
+<body>
+  <button id="btn1">click 1</button>
+  <button id="btn2">click 2</button>
+  <button id="btn3">click</button>
+
+  <p id="result"></p>
+
+  <script>
+        function randomNumber() {
+      
+        }   
+      
+        document.getElementById('btn1').addEventListener('click',function(){
+            document.getElementById('result').textContent=(Math.round( Math.random() * 10));
+        });
+
+        document.getElementById('btn2').addEventListener('click',function(){
+            document.getElementById('result').textContent=(Math.round( Math.random() * 100));
+        });
+
+        document.getElementById('btn3').addEventListener('click',function(){
+            document.getElementById('result').textContent=(Math.round( Math.random() * 1000));
+        });
+  </script>
+</body>
+</html>

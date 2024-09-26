@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance Manager</title>
+    <style>
+        *{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Personal Finance Manager</h2>
+
+<!-- Form -->
+<div>
+    <label for="description">Description:</label>
+    <input type="text" id="description">
+
+    <label for="amount">Amount:</label>
+    <input type="number" id="amount">
+
+    <label for="type">Type:</label>
+    <select id="type">
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+    </select>
+
+    <button id="addTransaction">Add Transaction</button>
+</div>
+
+<!-- Table -->
+<table id="transactionTable">
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Amount</th>
+            <th>Type</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Transactions will be added here -->
+    </tbody>
+</table>
+
+<script>
+// Add Transaction Functionality
+document.getElementById('addTransaction').addEventListener('click', function() {
+    // Get input values
+    const description = document.getElementById('description').value;
+    const amount = document.getElementById('amount').value;
+    const type = document.getElementById('type').value;
+
+    // Validate input (optional)
+    if (description === "" || amount === "") {
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    // Create new row
+    const table = document.getElementById('transactionTable').getElementsByTagName('tbody')[0];
+    const newRow = table.insertRow();
+
+    // Insert cells
+    const descCell = newRow.insertCell(0);
+    const amountCell = newRow.insertCell(1);
+    const typeCell = newRow.insertCell(2);
+    const actionCell = newRow.insertCell(3);
+
+    // Add content to cells
+    descCell.innerHTML = description;
+    amountCell.innerHTML = amount;
+    typeCell.innerHTML = type;
+
+    // Add delete button in action cell
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Delete';
+    deleteButton.onclick = function() {
+        // Remove row
+        table.deleteRow(newRow.rowIndex - 1);
+    };
+    actionCell.appendChild(deleteButton);
+
+    // Clear the form
+    document.getElementById('description').value = '';
+    document.getElementById('amount').value = '';
+    document.getElementById('type').value = 'income';
+});
+</script>
+
+</body>
+</html>

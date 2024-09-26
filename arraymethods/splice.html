@@ -7,16 +7,13 @@
 </head>
 <body>
     <script>
-       
-        var a=[6,789,94,22,12,35,0,9,12];
-    
-        a.sort(function(i,j)
-    {
-       return i-j;
-    
-    })
-    console.log(a);
-   
+        let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log("Before splice:", numbers);
+
+// Using splice to remove 4, 5, and 6, and add 40, 50, 60
+numbers.splice(3, 3, 40, 50, 60);
+
+console.log("After splice:", numbers);
 
     </script>
 </body>

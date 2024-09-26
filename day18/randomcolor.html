@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         #btn1{
+    width: 150px;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(240, 181, 159);
+    border: none;
+  }
+
+  #btn1:hover{
+    border: 1px solid black;
+  }
+
+  p{
+    background-color: rgb(245, 146, 184);
+    width: 100px;
+    align-content: center;
+    padding-left: 50px;
+    height: 30px;
+   
+  
+
+  }
+  div{
+    width: 400px;
+    background-color: beige;
+    height: 300px;
+    align-content: center;
+    padding-left: 150px;
+  }
+    </style>
+</head>
+<body>
+     <div>
+    <button id="btn1">generate password</button>
+    <p id="result"></p>
+
+    <!-- <input type="text" value="Hello World" id="result"> -->
+
+    <!-- <button onclick="generatePass()">Copy text</button> -->
+</div>
+    <script>
+      
+function generatePass() {
+    let pass = '';
+    let str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' +
+        'abcdefghijklmnopqrstuvwxyz0123456789@#$';
+
+    for (let i = 1; i <= 8; i++) {
+        let char = Math.floor(Math.random()
+            * str.length + 1);
+
+        pass += str.charAt(char)
+    }
+
+    return pass;
+}
+
+            document.getElementById('btn1').addEventListener('click',function(){
+             document.getElementById('result').textContent= generatePass() ;
+             var copyText = document.getElementById("result");
+
+  
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); 
+  navigator.clipboard.writeText(copyText.value);
+
+
+  alert("Copied the text: " + copyText.value); 
+             
+
+
+
+
+        });
+
+//         function myFunction() {
+ 
+//   var copyText = document.getElementById("result");
+
+  
+//   copyText.select();
+//   copyText.setSelectionRange(0, 99999); 
+//   navigator.clipboard.writeText(copyText.value);
+
+
+//   alert("Copied the text: " + copyText.value);
+// }
+
+
+    </script>
+</body>
+</html>
